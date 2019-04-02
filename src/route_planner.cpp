@@ -11,7 +11,7 @@ RoutePlanner::RoutePlanner(RouteModel &model, float start_x, float start_y, floa
   end_node = &m_Model.FindClosestNode(end_x, end_y);
 }
 
-void RoutePLanner::AStarSearch() {
+void RoutePlanner::AStarSearch() {
   start_node->visited = true;
   open_list.push_back(start_node);
   RouteModel::Node *current_node = nullptr;
