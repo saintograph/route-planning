@@ -1,4 +1,5 @@
-#pragma once
+// #ifndef ROUTE_MODEL_H
+// #define ROUTE_MODEL_H
 
 #include <limits>
 #include <cmath>
@@ -39,7 +40,7 @@ public:
   // Add public RouteModel variables and methods here.
   RouteModel(const std::vector<std::byte> &xml);
   Node &FindClosestNode(float x, float y);
-  auto &SNodes() { return m_nodes; }
+  auto &SNodes() { return m_Nodes; }
   auto &GetNodeToRoadMap() { return node_to_road; }
   std::vector<Node> path; // This variable will eventually store the path that is found by the A* search.
 
@@ -47,5 +48,7 @@ private:
   // Add private RouteModel variables and methods here.
   void CreateNodeToRoadHashmap();
   std::unordered_map<int, std::vector<const Model::Road *>> node_to_road;
-  std::vector<Node> m_nodes;
+  std::vector<Node> m_Nodes;
 };
+
+// #endif
